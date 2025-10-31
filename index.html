@@ -9,7 +9,8 @@
     <meta property="og:title" content="TEC - The Entrepreneur Community">
     <meta property="og:description" content="Transform from idea to launched MVP in 3 weeks with structured guidance, student talent, and peer accountability.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yoursite.com">
+    <meta property="og:url" content="https://tec.cotravels.in">
+    <meta name="google-site-verification" content="InuWbMkORp-P6kULYt_c5GUEPdRxB7d1rtYY09uupzs" />
     
     <title>TEC - The Entrepreneur Community | Build Products, Not Just Networks</title>
     
@@ -220,6 +221,17 @@
     }
     </script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3KC27RL5L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E3KC27RL5L');
+</script>
+
 <body class="bg-white text-gray-900" x-data="{ mobileMenuOpen: false, showSuccessMessage: false, projectModalOpen: false, forgeModalOpen: false}">
 
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -229,7 +241,7 @@
                     <a href="#"><img class="w-16" src="logo.jpg"></a>
                 </div>
                 
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-8">
                     <a href="#problem" class="text-gray-700 hover:text-blue-700 transition-colors duration-300">Problem</a>
                     <a href="#solution" class="text-gray-700 hover:text-blue-700 transition-colors duration-300">Solution</a>
                     <a href="#how-it-works" class="text-gray-700 hover:text-blue-700 transition-colors duration-300">How It Works</a>
@@ -239,11 +251,11 @@
                     <a href="#faq" class="text-gray-700 hover:text-blue-700 transition-colors duration-300">FAQs</a>
                 </div>
                 
-                <div class="hidden md:block">
+                <div class="hidden lg:block">
                     <a href="#cta" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-all duration-300">Get Started</a>
                 </div>
                 
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-blue-700 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -261,7 +273,7 @@
              x-transition:leave="transition ease-in duration-150"
              x-transition:leave-start="opacity-100 transform scale-100"
              x-transition:leave-end="opacity-0 transform scale-95"
-             class="md:hidden bg-white border-t">
+             class="lg:hidden bg-white border-t">
             <div class="px-4 pt-2 pb-4 space-y-2">
                 <a href="#problem" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Problem</a>
                 <a href="#solution" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Solution</a>

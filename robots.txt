@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tec.cotravels.in/sitemap.xml
