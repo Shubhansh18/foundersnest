@@ -19,12 +19,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <script src="https://kit.fontawesome.com/80710e270d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/80710e270d.js" crossorigin="anonymous" defer></script>
     
     <style>
         body {
@@ -238,7 +238,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <a href="#"><img class="w-16" src="logo.jpg"></a>
+                    <a href="#"><img class="w-16" src="logo.jpg" alt="TEC Logo"></a>
                 </div>
                 
                 <div class="hidden lg:flex space-x-8">
@@ -256,7 +256,9 @@
                 </div>
                 
                 <div class="lg:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-blue-700 focus:outline-none">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-blue-700 focus:outline-none" aria-label="Open main menu">
+                        <span x-show="!mobileMenuOpen" class="sr-only">Open main menu</span>
+                        <span x-show="mobileMenuOpen" class="sr-only">Close main menu</span>
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -287,803 +289,807 @@
         </div>
     </nav>
 
-    <section class="bg-gradient-to-br from-blue-50 to-white py-32 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <!-- <img src="logo.png" class="w-32 object-center mx-auto"> -->
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <span class="sr-only">TEC: Go From Idea to MVP in 3 Weeks</span>
+    <main>
+        <section class="bg-gradient-to-br from-blue-50 to-white py-24 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <!-- <img src="logo.png" class="w-32 object-center mx-auto"> -->
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    <span class="sr-only">TEC: Go From Idea to MVP in 3 Weeks</span>
+                    
+                    <span aria-hidden="true">
+                        Ideas are raw metal.<br><section class="text-orange-500">This is the forge.</section>
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+                    TEC builds products, not just networks. The structured program transform ideas to launched MVP—powered by student talent and peer accountability.
+                </p>
                 
-                <span aria-hidden="true">
-                    Ideas are raw metal.<br><section class="text-orange-500">This is the forge.</section>
-                </span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
-                TEC builds products, not just networks. The structured program transform ideas to launched MVP—powered by student talent and peer accountability.
-            </p>
-            
-            <form action="https://api.web3forms.com/submit" method="POST" class="max-w-md mx-auto mb-8" x-data="{ email: '', submitting: false }">
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <input type="hidden" name="access_key" value="e2e8b52b-e1b2-4b8f-b2b6-80a65bd5e777">
-                    <input type="hidden" name="redirect" target="_blank" value="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls">
-                    <input 
-                        type="email" 
-                        name="email"
-                        x-model="email"
-                        placeholder="Enter your email" 
-                        required
-                        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                    <button 
-                        type="submit"
-                        :disabled="submitting"
-                        class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold disabled:opacity-50"
-                    >
-                        Join Us
-                    </button>
-                </div>
-            </form>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="resources.html" class="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
-                    Start Your Journey (Free Tools)
-                </a>
-                <a href="#pricing" class="bg-white text-blue-700 border-2 border-blue-700 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
-                    Apply to Founder's Forge
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="problem" class="py-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-                The Problem We Solve
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg text-center">
-                    <div class="text-5xl mb-4">😰</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Idea Paralysis</h3>
-                    <p class="text-gray-700">
-                        You have ideas but don't know if they're worth pursuing or how to validate them properly.
-                    </p>
-                </div>
+                <form action="https://api.web3forms.com/submit" method="POST" class="max-w-md mx-auto mb-8" x-data="{ email: '', submitting: false }">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="hidden" name="access_key" value="e2e8b52b-e1b2-4b8f-b2b6-80a65bd5e777">
+                        <input type="hidden" name="redirect" target="_blank" value="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls">
+                        <label for="hero-email" class="sr-only">Enter your email</label>
+                        <input 
+                            type="email" 
+                            name="email"
+                            id="hero-email"
+                            x-model="email"
+                            placeholder="Enter your email" 
+                            required
+                            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <button 
+                            type="submit"
+                            :disabled="submitting"
+                            class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold disabled:opacity-50"
+                        >
+                            Join Us
+                        </button>
+                    </div>
+                </form>
                 
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg text-center">
-                    <div class="text-5xl mb-4">🏝️</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Founder Isolation</h3>
-                    <p class="text-gray-700">
-                        Building alone is hard. Finding co-founders and peers who get it is even harder.
-                    </p>
-                </div>
-                
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg text-center">
-                    <div class="text-5xl mb-4">🎯</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Execution Gap</h3>
-                    <p class="text-gray-700">
-                        You're ready to build but lack structure, mentorship, and resources to launch effectively.
-                    </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="resources.html" class="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
+                        Start Your Journey (Free Tools)
+                    </a>
+                    <a href="#pricing" class="bg-white text-blue-700 border-2 border-blue-700 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
+                        Apply to Founder's Forge
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="solution" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-                The TEC Solution
-            </h2>
-            <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 border-2 border-gray-200">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold text-gray-900 mb-4">A Complete Journey, Not Just a Tool</h3>
-                        <p class="text-gray-700 mb-6">
-                            TEC isn't just another accelerator or community. We've built a complete funnel that takes you from "I have an idea" to "I've launched my startup" - step by step.
+        <section id="problem" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+                    The Problem We Solve
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg text-center">
+                        <div class="text-5xl mb-4">💡</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Idea Paralysis</h3>
+                        <p class="text-gray-700">
+                            You have ideas but don't know if they're worth pursuing or how to validate them properly.
                         </p>
-                        <ul class="space-y-4">
+                    </div>
+                    
+                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg text-center">
+                        <div class="text-5xl mb-4">🏝️</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Founder Isolation</h3>
+                        <p class="text-gray-700">
+                            Building alone is hard. Finding co-founders and peers who get it is even harder.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg text-center">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Execution Gap</h3>
+                        <p class="text-gray-700">
+                            You're ready to build but lack structure, mentorship, and resources to launch effectively.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+                    The TEC Solution
+                </h2>
+                <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 border-2 border-gray-200">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">A Complete Journey, Not Just a Tool</h3>
+                            <p class="text-gray-700 mb-6">
+                                TEC isn't just another accelerator or community. We've built a complete funnel that takes you from "I have an idea" to "I've launched my startup" - step by step.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-gray-700"><strong>Start for free</strong> with AI-powered validation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-gray-700"><strong>Connect for free</strong> with peers and co-founders</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-gray-700"><strong>Execute with support</strong> through structured mentorship</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-700 text-white p-8 rounded-xl text-center flex flex-col items-center justify-center min-h-[300px]">
+                            <div class="text-6xl mb-4">🚀</div>
+                            <h4 class="text-2xl font-bold mb-2">No More Guessing</h4>
+                            <p class="text-blue-100">Clear path, proven process, real results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+                    How It Works
+                </h2>
+                <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">1</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Validate</h3>
+                        <p class="text-gray-700">Use IdeaVisor to test your idea and get insights</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">2</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Connect</h3>
+                        <p class="text-gray-700">Join the community, find co-founders</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">3</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Apply</h3>
+                        <p class="text-gray-700">Submit your validated idea to Founders Forge</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">4</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Launch</h3>
+                        <p class="text-gray-700">Build and launch your startup in 3 weeks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="forge-process" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+                    The 3-Week Forge Process
+                </h2>
+                <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
+                    A battle-tested, structured process that transforms raw ideas into market-ready products.
+                </p>
+                
+                <div class="relative">
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-300"></div>
+                    
+                    <div class="mb-12 md:flex md:items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-4 md:mb-0 md:text-right">
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-blue-200">
+                                <div class="text-4xl mb-3">🔥</div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Week 1: Heat &amp; Pressure</h3>
+                                <p class="text-lg text-blue-700 font-semibold mb-3">Idea Refinement</p>
+                                <ul class="text-gray-700 space-y-2 text-left">
+                                    <li>• Deep market research</li>
+                                    <li>• Customer interviews</li>
+                                    <li>• Problem-solution validation</li>
+                                    <li>• Competitor analysis</li>
+                                </ul>
+                                <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                                    <p class="text-green-700 font-semibold">✓ Outcome: Validated problem-solution fit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-12 justify-center">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">1</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12"></div>
+                    </div>
+                    
+                    <div class="mb-12 md:flex md:items-center">
+                        <div class="md:w-1/2 md:pr-12"></div>
+                        <div class="hidden md:flex md:w-12 justify-center">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">2</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-orange-200">
+                                <div class="text-4xl mb-3">🔨</div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Week 2: Hammering &amp; Shaping</h3>
+                                <p class="text-lg text-orange-600 font-semibold mb-3">Product Planning</p>
+                                <ul class="text-gray-700 space-y-2">
+                                    <li>• Feature prioritization</li>
+                                    <li>• Technical specifications</li>
+                                    <li>• User flow design</li>
+                                    <li>• Team matching</li>
+                                </ul>
+                                <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                                    <p class="text-green-700 font-semibold">✓ Outcome: Complete product roadmap</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:flex md:items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-4 md:mb-0 md:text-right">
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-green-200">
+                                <div class="text-4xl mb-3">⚡</div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Week 3: Final Forging</h3>
+                                <p class="text-lg text-green-600 font-semibold mb-3">MVP Development</p>
+                                <ul class="text-gray-700 space-y-2 text-left">
+                                    <li>• Sprint development</li>
+                                    <li>• Quality assurance</li>
+                                    <li>• Launch preparation</li>
+                                    <li>• Marketing setup</li>
+                                </ul>
+                                <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                                    <p class="text-green-700 font-semibold">✓ Outcome: Working MVP or in development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-12 justify-center">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">3</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosystem" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+                    A Complete Ecosystem
+                </h2>
+                <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
+                    A win-win-win platform where founders, students, and the community thrive together.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-lg border-2 border-blue-200 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-5xl mb-4 text-center">🚀</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">For Founders</h3>
+                        <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span class="text-gray-700"><strong>Start for free</strong> with AI-powered validation</span>
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Structured 3-week forge process</span>
                             </li>
                             <li class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span class="text-gray-700"><strong>Connect for free</strong> with peers and co-founders</span>
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Affordable execution (₹5-10K vs ₹50K+)</span>
                             </li>
                             <li class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span class="text-gray-700"><strong>Execute with support</strong> through structured mentorship</span>
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Quality peer community</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Student researchers &amp; developers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Real accountability systems</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-blue-700 text-white p-8 rounded-xl text-center flex flex-col items-center justify-center min-h-[300px]">
-                        <div class="text-6xl mb-4">🚀</div>
-                        <h4 class="text-2xl font-bold mb-2">No More Guessing</h4>
-                        <p class="text-blue-100">Clear path, proven process, real results</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works" class="py-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
-                How It Works
-            </h2>
-            <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                <div class="text-center">
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Validate</h3>
-                    <p class="text-gray-700">Use IdeaVisor to test your idea and get insights</p>
-                </div>
-                <div class="text-center">
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Connect</h3>
-                    <p class="text-gray-700">Join the community, find co-founders</p>
-                </div>
-                <div class="text-center">
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Apply</h3>
-                    <p class="text-gray-700">Submit your validated idea to Founders Forge</p>
-                </div>
-                <div class="text-center">
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full text-white text-3xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Launch</h3>
-                    <p class="text-gray-700">Build and launch your startup in 3 weeks</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="forge-process" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-                The 3-Week Forge Process
-            </h2>
-            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
-                A battle-tested, structured process that transforms raw ideas into market-ready products.
-            </p>
-            
-            <div class="relative">
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-300"></div>
-                
-                <div class="mb-12 md:flex md:items-center">
-                    <div class="md:w-1/2 md:pr-12 mb-4 md:mb-0 md:text-right">
-                        <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-blue-200">
-                            <div class="text-4xl mb-3">🔥</div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Week 1: Heat &amp; Pressure</h3>
-                            <p class="text-lg text-blue-700 font-semibold mb-3">Idea Refinement</p>
-                            <ul class="text-gray-700 space-y-2 text-left">
-                                <li>• Deep market research</li>
-                                <li>• Customer interviews</li>
-                                <li>• Problem-solution validation</li>
-                                <li>• Competitor analysis</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-                                <p class="text-green-700 font-semibold">✓ Outcome: Validated problem-solution fit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden md:flex md:w-12 justify-center">
-                        <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">1</div>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12"></div>
-                </div>
-                
-                <div class="mb-12 md:flex md:items-center">
-                    <div class="md:w-1/2 md:pr-12"></div>
-                    <div class="hidden md:flex md:w-12 justify-center">
-                        <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">2</div>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
-                        <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-orange-200">
-                            <div class="text-4xl mb-3">🔨</div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Week 2: Hammering &amp; Shaping</h3>
-                            <p class="text-lg text-orange-600 font-semibold mb-3">Product Planning</p>
-                            <ul class="text-gray-700 space-y-2">
-                                <li>• Feature prioritization</li>
-                                <li>• Technical specifications</li>
-                                <li>• User flow design</li>
-                                <li>• Team matching</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-                                <p class="text-green-700 font-semibold">✓ Outcome: Complete product roadmap</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:flex md:items-center">
-                    <div class="md:w-1/2 md:pr-12 mb-4 md:mb-0 md:text-right">
-                        <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-green-200">
-                            <div class="text-4xl mb-3">⚡</div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Week 3: Final Forging</h3>
-                            <p class="text-lg text-green-600 font-semibold mb-3">MVP Development</p>
-                            <ul class="text-gray-700 space-y-2 text-left">
-                                <li>• Sprint development</li>
-                                <li>• Quality assurance</li>
-                                <li>• Launch preparation</li>
-                                <li>• Marketing setup</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-                                <p class="text-green-700 font-semibold">✓ Outcome: Working MVP or in development</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden md:flex md:w-12 justify-center">
-                        <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl z-10">3</div>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ecosystem" class="py-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-                A Complete Ecosystem
-            </h2>
-            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
-                A win-win-win platform where founders, students, and the community thrive together.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-lg border-2 border-blue-200 hover:shadow-2xl transition-all duration-300">
-                    <div class="text-5xl mb-4 text-center">🚀</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">For Founders</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Structured 3-week forge process</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Affordable execution (₹5-10K vs ₹50K+)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Quality peer community</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Student researchers &amp; developers</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Real accountability systems</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-gradient-to-br from-orange-50 to-white rounded-xl p-8 shadow-lg border-2 border-orange-200 hover:shadow-2xl transition-all duration-300">
-                    <div class="text-5xl mb-4 text-center">🎓</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">For Students</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Earn incentives per project</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Real startup experience</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Major project fulfillment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Portfolio with live products</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Direct founder network access</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-8 shadow-lg border-2 border-green-200 hover:shadow-2xl transition-all duration-300">
-                    <div class="text-5xl mb-4 text-center">🤝</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">For Community</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Action-first culture</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>No wannapreneurs</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Weekly success stories</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Mentorship from alumni</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span>Lifetime network access</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="market-context" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-                Why 90% of Startups Fail (And How to Be in the 10%)
-            </h2>
-            <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
-                Understanding the core reasons startups fail is the first step to avoiding these pitfalls.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <div class="text-5xl mb-4 text-center">❌</div>
-                    <div class="text-4xl font-bold text-red-600 mb-2 text-center">42%</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">No market need</h3>
-                    <p class="text-gray-700 text-center">
-                        Founders skip validation and build products nobody wants
-                    </p>
-                </div>
-                
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <div class="text-5xl mb-4 text-center">💸</div>
-                    <div class="text-4xl font-bold text-orange-600 mb-2 text-center">29%</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Funding issues</h3>
-                    <p class="text-gray-700 text-center">
-                        Can't afford ₹50,000+ for basic MVP development
-                    </p>
-                </div>
-                
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <div class="text-5xl mb-4 text-center">👥</div>
-                    <div class="text-4xl font-bold text-blue-600 mb-2 text-center">23%</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">No team</h3>
-                    <p class="text-gray-700 text-center">
-                        Solo founders lack accountability and support systems
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-4 bg-blue-700 text-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold mb-2">157K+</div>
-                    <p class="text-blue-100">Startups in India need this</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold mb-2">3 weeks</div>
-                    <p class="text-blue-100">Idea to MVP timeline</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold mb-2">₹5-10K</div>
-                    <p class="text-blue-100">Affordable execution</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold mb-2">85%</div>
-                    <p class="text-blue-100">Target completion rate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-                Choose Your Path
-            </h2>
-            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
-                Start free, scale as you grow, or join the full forge experience.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Explorer</h3>
-                    <div class="text-4xl font-bold text-blue-700 mb-2">Free</div>
-                    <p class="text-gray-600 mb-6">Start your founder    journey</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">IdeaVisor access</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">LandingNest access</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Open community</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Educational content</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Self-guided resources</span>
-                        </li>
-                    </ul>
-                    <a href="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls" class="block w-full bg-blue-700 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold">
-                        Join WhatsApp Community
-                    </a>
-                </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Builder</h3>
-                    <div class="text-4xl font-bold text-orange-600 mb-2">₹5-10K</div>
-                    <p class="text-gray-600 mb-6">Per project basis</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Market research or MVP development projects</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Student team matching</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Quality assurance</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Community access</span>
-                        </li>
-                    </ul>
-                    <a href="#cta" class="block w-full bg-orange-500 text-white text-center px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold">
-                        Start a Project
-                    </a>
-                </div>
-                
-                <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-2xl border-4 border-blue-600 hover:shadow-3xl transition-all duration-300 hover:scale-105 transform relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">Most Popular</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2 mt-2">Forge Member</h3>
                     
-                    <div class="my-3">
-                        <span class="inline-block bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-semibold border border-red-200">
-                            🔥 80% OFF Launch Offer
-                        </span>
+                    <div class="bg-gradient-to-br from-orange-50 to-white rounded-xl p-8 shadow-lg border-2 border-orange-200 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-5xl mb-4 text-center">🎓</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">For Students</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Earn incentives per project</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Real startup experience</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Major project fulfillment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Portfolio with live products</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Direct founder network access</span>
+                            </li>
+                        </ul>
                     </div>
-
-                    <div class="flex items-baseline  gap-2 mb-2">
-                        <span class="text-xl font-medium text-blue-500 line-through">₹2,500</span>
-                        <span class="text-4xl font-bold text-blue-700">₹500</span>
-                        <span class="text-xl font-medium text-blue-700">/mo</span>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-8 shadow-lg border-2 border-green-200 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-5xl mb-4 text-center">🤝</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">For Community</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Action-first culture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>No wannapreneurs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Weekly success stories</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Mentorship from alumni</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span>Lifetime network access</span>
+                            </li>
+                        </ul>
                     </div>
-
-                    <p class="text-gray-600 mb-6">Full forge experience</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">3-week structured forge</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Peer accountability</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Selective Access (Exclusive access only for selected ideas)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">Mentor guidance</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2 font-bold">✓</span>
-                            <span class="text-gray-700">All tools included</span>
-                        </li>
-                    </ul>
-                    <a href="#cta" class="block w-full bg-blue-700 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold shadow-lg">
-                        Apply to Forge
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="story" class="py-20 px-4 bg-gradient-to-br from-orange-50 to-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-8">
-                Why I Built TEC
-            </h2>
-            
-            <div class="bg-white rounded-xl p-8 md:p-12 shadow-xl border-2 border-orange-200">
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                        Three years ago, I was exactly where you might be right now. I had an idea that kept me up at night, a problem I was desperate to solve, and absolutely no clue how to turn it into reality.
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                        I joined startup communities, attended countless networking events, and collected hundreds of LinkedIn connections. Everyone was talking about their "ideas" but nobody was actually building anything.
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                        When I finally decided to build, I got quotes of ₹50,000-₹2,00,000 for a basic MVP. As a college student turned early founder, that was impossible. So I learned to code, struggled for months, and eventually launched—but the journey was unnecessarily hard and lonely.
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                        That's when the idea for TEC crystallized: <strong>What if founders could build products affordably, students could gain real experience and earn, and everyone could be part of a community that actually ships?</strong>
-                    </p>
-                    <p class="text-gray-700 leading-relaxed text-lg">
-                        TEC isn't just another community—it's a forge where ideas are transformed into products through structure, affordability, and genuine peer support. We're building the ecosystem I wish existed when I started.
-                    </p>
-                    <div class="mt-8 p-6 bg-blue-50 border-l-4 border-blue-700 rounded">
-                        <p class="text-gray-900 font-semibold text-lg italic">
-                            "Success isn't about having the perfect idea. It's about having the courage to start, the structure to execute, and the community to support you through the journey."
+        <section id="market-context" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+                    Why 90% of Startups Fail (And How to Be in the 10%)
+                </h2>
+                <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+                    Understanding the core reasons startups fail is the first step to avoiding these pitfalls.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <div class="text-5xl mb-4 text-center">⚠️</div>
+                        <div class="text-4xl font-bold text-red-600 mb-2 text-center">42%</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">No market need</h3>
+                        <p class="text-gray-700 text-center">
+                            Founders skip validation and build products nobody wants
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <div class="text-5xl mb-4 text-center">💸</div>
+                        <div class="text-4xl font-bold text-orange-600 mb-2 text-center">29%</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Funding issues</h3>
+                        <p class="text-gray-700 text-center">
+                            Can't afford ₹50,000+ for basic MVP development
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <div class="text-5xl mb-4 text-center">👥</div>
+                        <div class="text-4xl font-bold text-blue-600 mb-2 text-center">23%</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">No team</h3>
+                        <p class="text-gray-700 text-center">
+                            Solo founders lack accountability and support systems
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="cta" class="py-20 px-4 bg-gradient-to-br from-blue-700 to-blue-900 text-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">
-                Ready to Transform Your Idea Into Reality?
-            </h2>
-            <p class="text-xl text-center mb-12 text-blue-100 max-w-3xl mx-auto">
-                Choose your entry point and join hundreds of founders who are building, not just talking.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl p-8 text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <div class="text-4xl mb-4 text-center">🚀</div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Start with Free Tools</h3>
-                    <p class="text-gray-700 mb-6 text-center">Validate your idea and create your landing page—no credit card required.</p>
-                    <a href="resources.html" class="block w-full bg-blue-700 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold">
-                        Try Tools Now
-                    </a>
+        <section class="py-20 px-4 bg-blue-700 text-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">157K+</div>
+                        <p class="text-blue-100">Startups in India need this</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">3 weeks</div>
+                        <p class="text-blue-100">Idea to MVP timeline</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">₹5-10K</div>
+                        <p class="text-blue-100">Affordable execution</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">85%</div>
+                        <p class="text-blue-100">Target completion rate</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+                    Choose Your Path
+                </h2>
+                <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
+                    Start free, scale as you grow, or join the full forge experience.
+                </p>
                 
-                <div class="bg-white rounded-xl p-8 text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
-                    <div class="text-4xl mb-4 text-center">🔨</div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Build a Project</h3>
-                    <p class="text-gray-700 mb-6 text-center">Get matched with talented students to develop your MVP at ₹5-10K.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Explorer</h3>
+                        <div class="text-4xl font-bold text-blue-700 mb-2">Free</div>
+                        <p class="text-gray-600 mb-6">Start your founder    journey</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">IdeaVisor access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">LandingNest access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Open community</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Educational content</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Self-guided resources</span>
+                            </li>
+                        </ul>
+                        <a href="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls" target="_blank" class="block w-full bg-blue-700 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold">
+                            Join WhatsApp Community
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Builder</h3>
+                        <div class="text-4xl font-bold text-orange-600 mb-2">₹5-10K</div>
+                        <p class="text-gray-600 mb-6">Per project basis</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Market research or MVP development projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Student team matching</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Quality assurance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Community access</span>
+                            </li>
+                        </ul>
+                        <a href="#cta" class="block w-full bg-orange-500 text-white text-center px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold">
+                            Start a Project
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-2xl border-4 border-blue-600 hover:shadow-3xl transition-all duration-300 hover:scale-105 transform relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">Most Popular</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2 mt-2">Forge Member</h3>
+                        
+                        <div class="my-3">
+                            <span class="inline-block bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-semibold border border-red-200">
+                                🔥 80% OFF Launch Offer
+                            </span>
+                        </div>
+
+                        <div class="flex items-baseline  gap-2 mb-2">
+                            <span class="text-xl font-medium text-blue-500 line-through">₹2,500</span>
+                            <span class="text-4xl font-bold text-blue-700">₹500</span>
+                            <span class="text-xl font-medium text-blue-700">/mo</span>
+                        </div>
+
+                        <p class="text-gray-600 mb-6">Full forge experience</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">3-week structured forge</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Peer accountability</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Selective Access (Exclusive access only for selected ideas)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">Mentor guidance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 font-bold">✓</span>
+                                <span class="text-gray-700">All tools included</span>
+                            </li>
+                        </ul>
+                        <a href="#cta" class="block w-full bg-blue-700 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold shadow-lg">
+                            Apply to Forge
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="py-20 px-4 bg-gradient-to-br from-orange-50 to-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-8">
+                    Why I Built TEC
+                </h2>
+                
+                <div class="bg-white rounded-xl p-8 md:p-12 shadow-xl border-2 border-orange-200">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-700 mb-4 leading-relaxed text-lg">
+                            Three years ago, I was exactly where you might be right now. I had an idea that kept me up at night, a problem I was desperate to solve, and absolutely no clue how to turn it into reality.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed text-lg">
+                            I joined startup communities, attended countless networking events, and collected hundreds of LinkedIn connections. Everyone was talking about their "ideas" but nobody was actually building anything.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed text-lg">
+                            When I finally decided to build, I got quotes of ₹50,000-₹2,00,000 for a basic MVP. As a college student turned early founder, that was impossible. So I learned to code, struggled for months, and eventually launched—but the journey was unnecessarily hard and lonely.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed text-lg">
+                            That's when the idea for TEC crystallized: <strong>What if founders could build products affordably, students could gain real experience and earn, and everyone could be part of a community that actually ships?</strong>
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            TEC isn't just another community—it's a forge where ideas are transformed into products through structure, affordability, and genuine peer support. We're building the ecosystem I wish existed when I started.
+                        </p>
+                        <div class="mt-8 p-6 bg-blue-50 border-l-4 border-blue-700 rounded">
+                            <p class="text-gray-900 font-semibold text-lg italic">
+                                "Success isn't about having the perfect idea. It's about having the courage to start, the structure to execute, and the community to support you through the journey."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 px-4 bg-gradient-to-br from-blue-700 to-blue-900 text-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">
+                    Ready to Transform Your Idea Into Reality?
+                </h2>
+                <p class="text-xl text-center mb-12 text-blue-100 max-w-3xl mx-auto">
+                    Choose your entry point and join hundreds of founders who are building, not just talking.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <div class="text-4xl mb-4 text-center">🚀</div>
+                        <h3 class="text-2xl font-bold mb-3 text-center">Start with Free Tools</h3>
+                        <p class="text-gray-700 mb-6 text-center">Validate your idea and create your landing page—no credit card required.</p>
+                        <a href="resources.html" class="block w-full bg-blue-700 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold">
+                            Try Tools Now
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+                        <div class="text-4xl mb-4 text-center">🔨</div>
+                        <h3 class="text-2xl font-bold mb-3 text-center">Build a Project</h3>
+                        <p class="text-gray-700 mb-6 text-center">Get matched with talented students to develop your MVP at ₹5-10K.</p>
+                        <button 
+                            @click="projectModalOpen = true"
+                            class="block w-full bg-orange-500 text-white text-center px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold"
+                        > 
+                            Start a Project
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform border-4 border-orange-500">
+                        <div class="text-4xl mb-4 text-center">⚡</div>
+                        <h3 class="text-2xl font-bold mb-3 text-center">Join the Forge</h3>
+                        <p class="text-gray-700 mb-6 text-center">Full 3-week program with cohort support and structured execution.</p>
+                        <button 
+                            @click="forgeModalOpen = true"
+                            class="block w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center px-6 py-3 rounded-lg hover:from-blue-800 hover:to-blue-950 transition-all duration-300 font-semibold"
+                        >
+                            Apply to Forge
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div x-show="projectModalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="project-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" style="display: none;">
+                <div class="bg-white rounded-xl p-8 max-w-md w-full relative" @click.outside="projectModalOpen = false">
                     <button 
-                        @click="projectModalOpen = true"
-                        class="block w-full bg-orange-500 text-white text-center px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold"
-                    > 
-                        Start a Project
-                    </button>
+                        @click="projectModalOpen = false"
+                        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+                    >&times;</button>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Start Your Project</h3>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                        <input type="hidden" name="access_key" value="e1c51512-fcc4-478a-967f-c6a646a3af51">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Project Description</label>
+                            <textarea name="description" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold">
+                            Submit Application
+                        </button>
+                    </form>
                 </div>
-                
-                <div class="bg-white rounded-xl p-8 text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform border-4 border-orange-500">
-                    <div class="text-4xl mb-4 text-center">⚡</div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Join the Forge</h3>
-                    <p class="text-gray-700 mb-6 text-center">Full 3-week program with cohort support and structured execution.</p>
-                    <button 
-                        @click="forgeModalOpen = true"
-                        class="block w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center px-6 py-3 rounded-lg hover:from-blue-800 hover:to-blue-950 transition-all duration-300 font-semibold"
-                    >
-                        Apply to Forge
-                    </button>
-                </div>
             </div>
-        </div>
-        
-        <div x-show="projectModalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="project-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" style="display: none;">
-            <div class="bg-white rounded-xl p-8 max-w-md w-full relative" @click.outside="projectModalOpen = false">
-                <button 
-                    @click="projectModalOpen = false"
-                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
-                >&times;</button>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Start Your Project</h3>
-                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                    <input type="hidden" name="access_key" value="e1c51512-fcc4-478a-967f-c6a646a3af51">
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Project Description</label>
-                        <textarea name="description" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 font-semibold">
-                        Submit Application
-                    </button>
-                </form>
-            </div>
-        </div>
-        
-        <div x-show="forgeModalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="forge-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" style="display: none;">
-            <div class="bg-white rounded-xl p-8 max-w-md w-full relative" @click.outside="forgeModalOpen = false">
-                <button 
-                    @click="forgeModalOpen = false"
-                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
-                >&times;</button>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Apply to Founder's Forge</h3>
-                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                    <input type="hidden" name="access_key" value="e1317d54-31f2-4580-a158-18c841a8b458">
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Current Stage</label>
-                        <select name="stage" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
-                            <option value="">Select your stage</option>
-                            <option value="idea">Just an Idea</option>
-                            <option value="validation">Validating</option>
-                            <option value="building">Building MVP</option>
-                            <option value="launched">Launched</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Tell us about your idea</label>
-                        <textarea name="idea" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold">
-                        Submit Application
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-20 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-                Frequently Asked Questions
-            </h2>
             
-            <div class="space-y-4" x-data="{ openFaq: null }">
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">What makes TEC different from other startup communities?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 1 }"></i>
-                    </button>
-                    <div x-show="openFaq === 1" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Unlike most “networking” groups, TEC is all about action. We help founders validate ideas, build MVPs, and launch—using a proven 3-week process, student-powered teams, and real accountability. We don’t just talk; we ship.
-                        </p>
-                    </div>
+            <div x-show="forgeModalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="forge-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" style="display: none;">
+                <div class="bg-white rounded-xl p-8 max-w-md w-full relative" @click.outside="forgeModalOpen = false">
+                    <button 
+                        @click="forgeModalOpen = false"
+                        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+                    >&times;</button>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Apply to Founder's Forge</h3>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                        <input type="hidden" name="access_key" value="e1317d54-31f2-4580-a158-18c841a8b458">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Current Stage</label>
+                            <select name="stage" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                                <option value="">Select your stage</option>
+                                <option value="idea">Just an Idea</option>
+                                <option value="validation">Validating</option>
+                                <option value="building">Building MVP</option>
+                                <option value="launched">Launched</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Tell us about your idea</label>
+                            <textarea name="idea" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-semibold">
+                            Submit Application
+                        </button>
+                    </form>
                 </div>
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">Who can join TEC?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 2 }"></i>
-                    </button>
-                    <div x-show="openFaq === 2" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            <strong>Founders:</strong> Anyone serious about building a startup, solo or in a small team.<br>
-                            <strong>MBA Students:</strong> MBA students looking for hands-on, paid experience for validating real world ideas.<br>
-                            <strong>Engineering Students:</strong> Engineering students looking for hands-on, paid experience for creating real world project with mentorship guidance on how to user your coding skills to solve real problems with latest tech building high value projects for your resume.<br>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">How does the 3-week “Forge” program work?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 3 }"></i>
-                    </button>
-                    <div x-show="openFaq === 3" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Each week is focused: <br>
-                            <strong>Week 1:</strong> Rapid idea validation & accountability.<br>
-                            <strong>Week 2:</strong> Product mapping and team matching.<br>
-                            <strong>Week 3:</strong> MVP development with student teams. <br>
-                            Along the way, you’ll get peer support, reviews, and launch readiness—ending with a launch or clear next steps.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">What do I get as a founder?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 4 }"></i>
-                    </button>
-                    <div x-show="openFaq === 4" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Structured roadmap, live peer support, curated access to affordable student teams, exclusive community, and practical tools (like IdeaVisor & LandingNest). Plus measurable results—not just advice.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">How do students benefit with TEC?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 5 }"></i>
-                    </button>
-                    <div x-show="openFaq === 5" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Students work on real-world projects, earn ₹5,000-₹10,000 per project, build a portfolio, and fulfill their major/final year project requirements—all while networking with founders and mentors.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">What are the paid options and what’s included?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 6 }"></i>
-                    </button>
-                    <div x-show="openFaq === 6" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            <strong>Forge Member:</strong> Full 3-week cohort, premium access, mentor support, student team included<br>
-                            <strong>Builder Plan (₹5K-10K):</strong> Pay per project for a student-built MVP or research<br>
-                            Both include quality checks, peer support, and results tracking.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 7 ? null : 7" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">Can I try before committing?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 7 }"></i>
-                    </button>
-                    <div x-show="openFaq === 7" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Yes! Use <a class="text-blue-700 underline" href="https://ideavisor.cotravels.in" target="_blank">IdeaVisor</a> to validate your idea or <a class="text-blue-700 underline" href="https://landingnest.cotravels.in" target="_blank">LandingNest</a> to create a landing page—completely free with no signup needed.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 8 ? null : 8" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">Do I keep ownership of my product/IP?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 8 }"></i>
-                    </button>
-                    <div x-show="openFaq === 8" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Absolutely. You retain full ownership of all product code and deliverables. Students are paid per project; no hidden equity or IP claims.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 9 ? null : 9" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">How are teams and quality managed?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 9 }"></i>
-                    </button>
-                    <div x-show="openFaq === 9" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            All students are vetted, and projects are reviewed by mentors and peers. Multiple quality checkpoints and milestone demos ensure you stay on track. We measure completion and satisfaction after every sprint.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg border shadow-sm">
-                    <button @click="openFaq = openFaq === 10 ? null : 10" class="w-full flex justify-between items-center text-left p-6">
-                        <h3 class="font-semibold text-lg text-gray-900">How do I join or get started?</h3>
-                        <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 10 }"></i>
-                    </button>
-                    <div x-show="openFaq === 10" x-collapse class="px-6 pb-6">
-                        <p class="text-gray-700">
-                            Click “Start Your Journey” or “Apply to Forge” at the top, or join the WhatsApp community for updates and peer connect. All details will follow via email after signup.
-                        </p>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="faq" class="py-20 px-4 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+                    Frequently Asked Questions
+                </h2>
+                
+                <div class="space-y-4" x-data="{ openFaq: null }">
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">What makes TEC different from other startup communities?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 1 }"></i>
+                        </button>
+                        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Unlike most “networking” groups, TEC is all about action. We help founders validate ideas, build MVPs, and launch—using a proven 3-week process, student-powered teams, and real accountability. We don’t just talk; we ship.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">Who can join TEC?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 2 }"></i>
+                        </button>
+                        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                <strong>Founders:</strong> Anyone serious about building a startup, solo or in a small team.<br>
+                                <strong>MBA Students:</strong> MBA students looking for hands-on, paid experience for validating real world ideas.<br>
+                                <strong>Engineering Students:</strong> Engineering students looking for hands-on, paid experience for creating real world project with mentorship guidance on how to user your coding skills to solve real problems with latest tech building high value projects for your resume.<br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">How does the 3-week “Forge” program work?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 3 }"></i>
+                        </button>
+                        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Each week is focused: <br>
+                                <strong>Week 1:</strong> Rapid idea validation & accountability.<br>
+                                <strong>Week 2:</strong> Product mapping and team matching.<br>
+                                <strong>Week 3:</strong> MVP development with student teams. <br>
+                                Along the way, you’ll get peer support, reviews, and launch readiness—ending with a launch or clear next steps.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">What do I get as a founder?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 4 }"></i>
+                        </button>
+                        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Structured roadmap, live peer support, curated access to affordable student teams, exclusive community, and practical tools (like IdeaVisor & LandingNest). Plus measurable results—not just advice.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">How do students benefit with TEC?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 5 }"></i>
+                        </button>
+                        <div x-show="openFaq === 5" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Students work on real-world projects, earn ₹5,000-₹10,000 per project, build a portfolio, and fulfill their major/final year project requirements—all while networking with founders and mentors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">What are the paid options and what’s included?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 6 }"></i>
+                        </button>
+                        <div x-show="openFaq === 6" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                <strong>Forge Member:</strong> Full 3-week cohort, premium access, mentor support, student team included<br>
+                                <strong>Builder Plan (₹5K-10K):</strong> Pay per project for a student-built MVP or research<br>
+                                Both include quality checks, peer support, and results tracking.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 7 ? null : 7" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">Can I try before committing?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 7 }"></i>
+                        </button>
+                        <div x-show="openFaq === 7" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Yes! Use <a class="text-blue-700 underline" href="https://ideavisor.cotravels.in" target="_blank">IdeaVisor</a> to validate your idea or <a class="text-blue-700 underline" href="https://landingnest.cotravels.in" target="_blank">LandingNest</a> to create a landing page—completely free with no signup needed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 8 ? null : 8" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">Do I keep ownership of my product/IP?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 8 }"></i>
+                        </button>
+                        <div x-show="openFaq === 8" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Absolutely. You retain full ownership of all product code and deliverables. Students are paid per project; no hidden equity or IP claims.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 9 ? null : 9" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">How are teams and quality managed?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 9 }"></i>
+                        </button>
+                        <div x-show="openFaq === 9" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                All students are vetted, and projects are reviewed by mentors and peers. Multiple quality checkpoints and milestone demos ensure you stay on track. We measure completion and satisfaction after every sprint.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg border shadow-sm">
+                        <button @click="openFaq = openFaq === 10 ? null : 10" class="w-full flex justify-between items-center text-left p-6">
+                            <h3 class="font-semibold text-lg text-gray-900">How do I join or get started?</h3>
+                            <i class="fa-solid fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 10 }"></i>
+                        </button>
+                        <div x-show="openFaq === 10" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">
+                                Click “Start Your Journey” or “Apply to Forge” at the top, or join the WhatsApp community for updates and peer connect. All details will follow via email after signup.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-gray-900 text-white py-12 px-4">
         <div class="max-w-6xl mx-auto">
@@ -1131,14 +1137,14 @@
                             Subscribe
                         </button>
                     </form>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/tec-the-entrepreneur-community/" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/tecommunity.in/" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                    <div class="flex space-x-4 gap-2 m-1">
+                        <a href="https://www.instagram.com/tecommunity.in/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
+                        <a href="https://www.linkedin.com/company/tec-the-entrepreneur-community/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>    
                         </a>
                     </div>
@@ -1149,7 +1155,7 @@
                 <p>&copy; 2025 TEC - The Entrepreneur Community. All rights reserved.</p>
                 <div class="flex justify-center space-x-6 mt-4">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" classS="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                     <a href="#" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>

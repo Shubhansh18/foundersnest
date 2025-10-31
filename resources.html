@@ -60,7 +60,9 @@
                 </div>
                 
                 <div class="lg:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-blue-700 focus:outline-none">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-blue-700 focus:outline-none" aria-label="Open main menu">
+                        <span x-show="!mobileMenuOpen" class="sr-only">Open main menu</span>
+                        <span x-show="mobileMenuOpen" class="sr-only">Close main menu</span>
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -185,14 +187,14 @@
                             Subscribe
                         </button>
                     </form>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/tec-the-entrepreneur-community/" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/tecommunity.in/" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                    <div class="flex space-x-4 gap-2 m-1">
+                        <a href="https://www.instagram.com/tecommunity.in/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
+                        <a href="https://www.linkedin.com/company/tec-the-entrepreneur-community/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/D04lA2mTgKHF5l8cJCK5Ls" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>    
                         </a>
                     </div>
